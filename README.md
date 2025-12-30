@@ -32,7 +32,7 @@ Bienvenido a la versión 3 de E-commerce Game, una plataforma moderna full-stack
 
 ### Vista Principal y Catálogo
 Explora nuestra amplia colección de juegos.
-![Catálogo](./frontend/public/catalogo.jpeg)
+![Catálogo](./frontend/public/Catalogo.jpeg)
 
 ### Detalle de Producto
 Información exhaustiva, especificaciones técnicas y requisitos del sistema.
