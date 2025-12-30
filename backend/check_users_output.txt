@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "name": "Andrés",
+    "email": "lozadaandres955@gmail.com",
+    "password": "$2b$10$Nvl.oHrqKhnlE7jHx0tWTudBrOqn1nQKT.4puc0FG3Xy6V3kqh7k6",
+    "isAdmin": true
+  }
+]

@@ -15,6 +15,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import AiChatAssistant from './components/AiChatAssistant';
 
 const App = () => {
   const { user, logout } = useAuth();
@@ -80,6 +81,7 @@ const App = () => {
           </div>
         </div>
       </footer>
+      <AiChatAssistant />
     </>
   );
 };

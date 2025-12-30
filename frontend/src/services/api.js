@@ -3,10 +3,15 @@ const API_URL = 'http://localhost:5000';
 const request = async (endpoint, method = 'GET', body = null, headers = {}, isFormData = false) => {
   console.log(`API Request: ${method} ${endpoint}`, { headers, isFormData });
   
+  // Obtener token de localStorage
+  const user = JSON.parse(localStorage.getItem('user')); // Asumimos que guardamos todo el objeto user
+  const token = user?.token;
+
   const config = {
     method,
     headers: {
       ...headers,
+      ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
     },
   };
 
@@ -67,15 +72,15 @@ export const register = (userData) => request('/registro', 'POST', userData);
 // Products
 export const getProductos = () => request('/productos');
 export const getProductoById = (id) => request(`/productos/${id}`);
-export const createProducto = (data, userId) => request('/productos', 'POST', data, { 'X-User-ID': userId }, true);
-export const updateProducto = (id, data, userId) => request(`/productos/${id}`, 'PUT', data, { 'X-User-ID': userId }, true);
-export const deleteProducto = (id, userId) => request(`/productos/${id}`, 'DELETE', null, { 'X-User-ID': userId });
+export const createProducto = (data) => request('/productos', 'POST', data, {}, true);
+export const updateProducto = (id, data) => request(`/productos/${id}`, 'PUT', data, {}, true);
+export const deleteProducto = (id) => request(`/productos/${id}`, 'DELETE');
 
 // Categories
 export const getCategorias = () => request('/categorias');
-export const createCategoria = (data, userId) => request('/categorias', 'POST', data, { 'X-User-ID': userId });
-export const updateCategoria = (id, data, userId) => request(`/categorias/${id}`, 'PUT', data, { 'X-User-ID': userId });
-export const deleteCategoria = (id, userId) => request(`/categorias/${id}`, 'DELETE', null, { 'X-User-ID': userId });
+export const createCategoria = (data) => request('/categorias', 'POST', data);
+export const updateCategoria = (id, data) => request(`/categorias/${id}`, 'PUT', data);
+export const deleteCategoria = (id) => request(`/categorias/${id}`, 'DELETE');
 
 // Cart
 export const getCarrito = (usuarioId) => request(`/carrito/${usuarioId}`);
@@ -85,7 +90,10 @@ export const removeFromCarrito = (usuarioId, productoId) => request(`/carrito/${
 export const clearCarrito = (usuarioId) => request(`/carrito/${usuarioId}`, 'DELETE');
 
 // Users (Admin)
-export const getUsuarios = (userId) => request('/usuarios', 'GET', null, { 'X-User-ID': userId });
-export const createUsuario = (data, userId) => request('/usuarios', 'POST', data, { 'X-User-ID': userId });
-export const updateUsuario = (id, data, userId) => request(`/usuarios/${id}`, 'PUT', data, { 'X-User-ID': userId });
-export const deleteUsuario = (id, userId) => request(`/usuarios/${id}`, 'DELETE', null, { 'X-User-ID': userId });
+export const getUsuarios = () => request('/usuarios', 'GET');
+export const createUsuario = (data) => request('/usuarios', 'POST', data);
+export const updateUsuario = (id, data) => request(`/usuarios/${id}`, 'PUT', data);
+export const deleteUsuario = (id) => request(`/usuarios/${id}`, 'DELETE');
+// AI
+export const getRecommendations = (cartItems) => request('/api/recommendations', 'POST', { cartItems });
+export const processChat = (data) => request('/api/ai/chat', 'POST', data);

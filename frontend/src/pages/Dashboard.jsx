@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      <nav>
+      <nav className="sidebar">
         <h3>Panel de Administrador</h3>
         <ul>
           <li><Link to="productos">Gestionar Productos</Link></li>
