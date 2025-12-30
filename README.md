@@ -72,34 +72,7 @@ Feedback visual intuitivo.
 
 ## 📐 Diagramas de Arquitectura
 
-### Diagrama de Casos de Uso
-Interacciones principales entre usuarios y el sistema.
-```mermaid
-usecaseDiagram
-    actor "Cliente" as User
-    actor "Administrador" as Admin
 
-    package "E-commerce Game V.3" {
-        usecase "Registrarse / Login" as UC1
-        usecase "Ver Catálogo" as UC2
-        usecase "Carrito + IA Recomendaciones" as UC5
-        usecase "Chatbot AI" as UC7
-        usecase "Checkout" as UC8
-        
-        usecase "Gestión (Productos/Users)" as UC9
-        usecase "Ver Dashboard" as UC11
-    }
-
-    User --> UC1
-    User --> UC2
-    User --> UC5
-    User --> UC7
-    User --> UC8
-
-    Admin --> UC1
-    Admin --> UC9
-    Admin --> UC11
-```
 
 ### Diagrama de Flujo de Usuario
 Recorrido típico de compra con asistencia de IA.
