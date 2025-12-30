@@ -10,6 +10,24 @@ Bienvenido a la versión 3 de E-commerce Game, una plataforma moderna full-stack
 *   **Inteligencia Artificial**: Chatbot integrado y recomendaciones personalizadas en el carrito.
 *   **Carrito de Compras**: Gestión de pedidos en tiempo real.
 
+## 🤖 Integración de Inteligencia Artificial
+
+### IA para detectar abandono en tiempo real
+*   El sistema identifica señales como inactividad (>1–2 min) o dudas en el carrito.
+*   Actúa antes de que el usuario abandone.
+
+### Recomendaciones personalizadas con IA
+*   Upselling y cross-selling dinámico según el comportamiento del usuario.
+*   Ejemplo: sugerir productos complementarios o descuentos relevantes.
+
+### Chatbot predictivo integrado al checkout
+*   Resuelve dudas frecuentes (precio, talla, envío) sin salir del flujo.
+*   Reduce fricción y pasos innecesarios.
+
+### Optimización del checkout
+*   Pasar de un proceso largo (>5 min) a checkout en un solo paso.
+*   IA acompaña la decisión final de compra.
+
 ## 📸 Galería de Imágenes
 
 ### Vista Principal y Catálogo
